@@ -1,0 +1,3 @@
+POST  http://localhost:3001/contacts/show
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBldGVyQGdtYWlsLmNvbSIsIl9pZCI6IjY0NjIzNDcwNGViMzg0YzgzYjNhNWU4MyIsImlhdCI6MTY4NDE3MTk3MSwiZXhwIjoxNjg0MTcyMDMxfQ.BC6Y5ZM0e0WzmFQ-DJeOj6Tva-VWTHvSvpecxRYYUb8
+
