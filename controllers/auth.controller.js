@@ -21,7 +21,7 @@ const generateRefreshToken = (user)=>{
 const login = async(req,res)=>{
  
     const {email,password} = req.body;    
-    console.log(password)
+
 
     try{
          //Check if there is a  no user associated with that email 
@@ -37,7 +37,7 @@ const login = async(req,res)=>{
             }
             
             req.session.user = sanitizedUser
-            
+            console.log("ression in loginn",req.session.user)
 
             // creating tokens
             const token = generateAccessToken(sanitizedUser) 
