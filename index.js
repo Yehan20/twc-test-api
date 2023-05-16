@@ -41,7 +41,9 @@ app.use(session({
      secret:process.env.COOKIE_SECRET_KEY,
      cookie:{
         maxAge:3600000
-     }
+     },
+     saveUninitialized:false,
+     resave:false,
 }))
 app.use(authRoutes);
 app.use(contactRoutes);
