@@ -42,8 +42,8 @@ app.use(session({
      cookie:{
         maxAge:3600000
      },
-     saveUninitialized:false,
-     resave:false,
+     saveUninitialized:true,
+     resave:true,
 }))
 app.use(authRoutes);
 app.use(contactRoutes);
