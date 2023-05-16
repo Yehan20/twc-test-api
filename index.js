@@ -1,6 +1,15 @@
-if(process.env.NODE_ENV!=='production'){
-    require('dotenv').config()
-}
+// if(process.env.NODE_ENV!=='production'){
+//     require('dotenv').config()
+// }
+const KEY =function(){
+    if( process.env.CONNECTION_URL===undefined){
+        console.log('wrong')
+        return require('dotenv').config()
+    }
+    console.log('run')
+    return  process.env.CONNECTION_URL
+}()
+
 // Global Packages
 const express = require('express');
 const mongoose = require('mongoose')

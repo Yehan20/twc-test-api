@@ -29,7 +29,7 @@ REFRESH_TOKEN_SECRET_KEY=Your key
 
 COOKIE_SECRET_KEY = Your key
 
-MONGODB_CONNECTION_KEY =  You
+MONGODB_CONNECTION_KEY =  Your Key
 ```
 
 You can conntect to local mongo db or use a  online cluster <br />
@@ -63,4 +63,4 @@ $ npm install
 $ npm start
 ```
 
-Change the port number with sny prefered port and then the server would run
+Change the port number with any prefered port and then the server would run
