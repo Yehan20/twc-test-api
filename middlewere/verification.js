@@ -5,7 +5,7 @@ const verifyToken=(req,res,next)=>{
      console.log('run the middle weres')
     //  verify the token before giving access to the user
      const token = req.headers["authorization"];
-     console.log(token)
+
      if(!token){
         return res.status(401).json({message:"Token not exisits"})
      }

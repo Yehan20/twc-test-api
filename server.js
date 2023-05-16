@@ -8,7 +8,7 @@ const cors = require('cors');
 const session = require('express-session')
 const bodyParser = require('body-parser')
 
-//mongodb+srv://yehan:<password>@carcitycluster.dodfqtz.mongodb.net/
+const atlas=process.env.MONGODB_SECRET_KEY
 
 const app = express();
 
@@ -37,7 +37,7 @@ app.use(contactRoutes);
 
 app.listen(3001,()=>{
     console.log('run')
-    mongoose.connect('mongodb://localhost:27017/twc').then(result=>{
+    mongoose.connect(atlas).then(result=>{
         if(result){
             console.log('connected to the database')
         }
