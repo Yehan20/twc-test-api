@@ -44,7 +44,7 @@ app.use(session({
         maxAge:3600000
      },
      saveUninitialized:false,
-     resave:true,
+     resave:false,
 }))
 app.use(authRoutes);
 app.use(contactRoutes);
