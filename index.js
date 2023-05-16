@@ -2,13 +2,15 @@
 //     require('dotenv').config()
 // }
 const KEY =function(){
-    if( process.env.CONNECTION_URL===undefined){
+    if( process.env.MONGODB_SECRET_KEY===undefined){
         console.log('wrong')
         return require('dotenv').config()
     }
     console.log('run')
-    return  process.env.CONNECTION_URL
+    return  process.env.MONGODB_SECRET_KEY
 }()
+
+// console.log(KEY)
 
 // Global Packages
 const express = require('express');
