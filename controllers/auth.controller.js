@@ -8,7 +8,7 @@ const contactSchema = require('../model/contacts');
 
 // JWT Token Generations
 const generateAccessToken = (user)=>{
-   const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET_KEY,{expiresIn:'1m'})
+   const accessToken = jwt.sign(user,process.env.ACCESS_TOKEN_SECRET_KEY,{expiresIn:'30m'})
    return accessToken;
 }
 const generateRefreshToken = (user)=>{
@@ -21,6 +21,7 @@ const generateRefreshToken = (user)=>{
 const login = async(req,res)=>{
  
     const {email,password} = req.body;    
+    console.log(password)
 
     try{
          //Check if there is a  no user associated with that email 
@@ -50,7 +51,7 @@ const login = async(req,res)=>{
 
             return res.status(200).json ({...sanitizedUser,accessToken:token,refreshToken:refreshToken})
         }
-        else return res.status(200).json({message:"Password is Incorrect"})
+        else return res.status(500).json({message:"Password is Incorrect"})
 
     }catch(e){
         console.log(e)
@@ -100,7 +101,7 @@ const register  = async(req,res)=>{
 }
 
 const logout = async(req,res)=>{
-    const userId= req.body.id
+    const userId= req.params.id
     try{
         await userSchema.findByIdAndUpdate(
             {_id:userId},

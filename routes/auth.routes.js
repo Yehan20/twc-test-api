@@ -8,6 +8,6 @@ router.post('/login',authControllers.login);
 router.post('/register',authControllers.register)
 router.post('/token',authControllers.resetToken)
 router.get('/login',authControllers.isLogged)
-router.delete('/logout',authControllers.logout)
+router.delete('/logout/:id',authControllers.logout)
 
 module.exports = router;

@@ -6,7 +6,9 @@ const express = require('express');
 const mongoose = require('mongoose')
 const cors = require('cors');
 const session = require('express-session')
+const bodyParser = require('body-parser')
 
+//mongodb+srv://yehan:<password>@carcitycluster.dodfqtz.mongodb.net/
 
 const app = express();
 
@@ -17,10 +19,11 @@ const contactRoutes = require('./routes/operations.routes')
 
 //Middle Were
 app.use(express.json());
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors({
-     //origin:'',
+     origin:'http://127.0.0.1:5173',
      credentials:true,
-     methods:["GET","POST"]
+    
 }));
 app.use(session({
      key:"UserSession",

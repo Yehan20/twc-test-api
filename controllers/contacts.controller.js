@@ -57,6 +57,7 @@ const updateContact = async(req,res)=>{
          gender:req.body.newGender,
          id:req.body.id
     }
+    console.log(updatedContact)
     try{
         const doc = await contactSchema.findOneAndUpdate(
 
@@ -81,7 +82,7 @@ const updateContact = async(req,res)=>{
 
 const deleteContact = async(req,res)=>{
    //const userId  =req.user._id;
-   const contactId = req.body.id;
+   const contactId = req.params.id;
    try{
     // we update and remove the contact
      const updatedContact = await contactSchema.findOneAndUpdate(
