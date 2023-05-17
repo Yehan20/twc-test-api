@@ -3,7 +3,7 @@
 // }
 const KEY =function(){
     if( process.env.MONGODB_SECRET_KEY===undefined){
-        console.log('wrong')
+  
         return require('dotenv').config()
     }
     console.log('run')
