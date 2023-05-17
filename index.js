@@ -1,14 +1,14 @@
-// if(process.env.NODE_ENV!=='production'){
-//     require('dotenv').config()
-// }
-const KEY =function(){
-    if( process.env.MONGODB_SECRET_KEY===undefined){
+if(process.env.NODE_ENV!=='production'){
+    require('dotenv').config()
+}
+// const KEY =function(){
+//     if( process.env.MONGODB_SECRET_KEY===undefined){
   
-        return require('dotenv').config()
-    }
-    console.log('run')
-    return  process.env.MONGODB_SECRET_KEY
-}()
+//         return require('dotenv').config()
+//     }
+//     console.log('run')
+//     return  process.env.MONGODB_SECRET_KEY
+// }()
 
 // console.log(KEY)
 
@@ -32,7 +32,7 @@ const contactRoutes = require('./routes/operations.routes')
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors({
-     origin:'https://yn-contacts-portact-twc.netlify.app',
+     origin:'https://yn-contacts-portal-twc.netlify.app/',
      credentials:true,
     
     
