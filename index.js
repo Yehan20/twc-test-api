@@ -32,7 +32,7 @@ const contactRoutes = require('./routes/operations.routes')
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors({
-     origin:'https://yn-contacts-portact-twc.netlify.app/',
+     origin:'https://yn-contacts-portact-twc.netlify.app',
      credentials:true,
     
     
