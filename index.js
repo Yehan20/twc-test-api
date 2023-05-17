@@ -32,7 +32,7 @@ const contactRoutes = require('./routes/operations.routes')
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors({
-     origin:['http://127.0.0.1:5173','https://twc-contact-portal-api.onrender.com'],
+     origin:['http://127.0.0.1:5173','yn-contacts-portact-twc.netlify.app'],
      credentials:true,
     
     
