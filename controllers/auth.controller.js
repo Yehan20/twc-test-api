@@ -80,7 +80,7 @@ const register  = async(req,res)=>{
         })
 
         //Create Contact Document 
-       await contactSchema.create({
+        await contactSchema.create({
             userId:user._id,
             userEmail:user.email,
             contacts:[]
@@ -92,7 +92,21 @@ const register  = async(req,res)=>{
             email: user.email,
         };
 
-        res.status(200).json(sanitizedUser)
+
+
+        req.session.user = sanitizedUser
+
+        // creating tokens
+        const token = generateAccessToken(sanitizedUser) 
+        const refreshToken = generateRefreshToken(sanitizedUser)
+
+        await userSchema.findByIdAndUpdate(
+            {_id:existingUser[0]._id},
+            {$set:{'refreshToken':refreshToken}},
+            {new:true}
+        )
+
+        res.status(200).json({...sanitizedUser,accessToken:token,refreshToken:refreshToken})
 
       }catch(e){
         console.log(e.message)
