@@ -110,7 +110,7 @@ const register  = async(req,res)=>{
 
       }catch(e){
         console.log(e.message)
-        res.status(500).json({message:"Internal Server Error"})
+        res.status(500).json({message:"Internal Server Error",error:e.message})
       }
 
 }
