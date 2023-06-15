@@ -101,7 +101,7 @@ const register  = async(req,res)=>{
         const refreshToken = generateRefreshToken(sanitizedUser)
 
         await userSchema.findByIdAndUpdate(
-            {_id:existingUser[0]._id},
+            {_id:user._id},
             {$set:{'refreshToken':refreshToken}},
             {new:true}
         )
