@@ -44,7 +44,7 @@ app.use(session({
         secure:true,
         maxAge:3600000
      },
-     saveUninitialized:false,
+     saveUninitialized:true,
      resave:false,
 }))
 app.use(authRoutes);
