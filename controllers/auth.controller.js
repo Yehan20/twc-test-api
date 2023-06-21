@@ -95,6 +95,7 @@ const register  = async(req,res)=>{
 
 
         req.session.user = sanitizedUser
+        
 
         // creating tokens
         const token = generateAccessToken(sanitizedUser) 
@@ -132,7 +133,8 @@ const logout = async(req,res)=>{
 }
 
 const isLogged = (req,res)=>{
-    console.log(req.session.user)
+    console.log("session",req.session)
+    console.log("sesstion id",req.session.user)
     if(req.session.user){
         res.send({user:req.session.user,isLogged:true})
     }
