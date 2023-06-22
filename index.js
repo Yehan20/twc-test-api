@@ -37,16 +37,15 @@ app.use(cors({
     
     
 }));
-app.enable('trust proxy',true);
+
 app.use(session({
      key:"UserSession",
-     name:'CpSession',
-     proxy: true,
+
 
      secret:process.env.COOKIE_SECRET_KEY,
      cookie:{
         maxAge:3600000,
-        secure:true,
+
 
      },
      saveUninitialized:false,
