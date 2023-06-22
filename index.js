@@ -41,10 +41,10 @@ app.use(session({
      key:"UserSession",
      secret:process.env.COOKIE_SECRET_KEY,
      cookie:{
-        secure:true,
+        // secure:true,
         maxAge:3600000
      },
-     saveUninitialized:true,
+     saveUninitialized:false,
      resave:false,
 }))
 app.use(authRoutes);
