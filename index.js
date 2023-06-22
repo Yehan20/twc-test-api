@@ -37,6 +37,7 @@ app.use(cors({
     
     
 }));
+app.enable('trust proxy',true);
 app.use(session({
      key:"UserSession",
      name:'CpSession',
