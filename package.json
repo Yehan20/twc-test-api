@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon index.js",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Yehan Nilanga",
@@ -14,13 +14,15 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
+    "connect-redis": "^7.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
-    "dotenv": "^16.0.3"
+    "redis": "^4.6.7"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",

@@ -40,14 +40,15 @@ app.use(cors({
 app.use(session({
      key:"UserSession",
      name:'CpSession',
+     proxy: true,
 
      secret:process.env.COOKIE_SECRET_KEY,
      cookie:{
         maxAge:3600000,
         secure:true,
-        sameSite: 'none'
+
      },
-    
+     saveUninitialized:false,
      resave:false,
 }))
 app.use(authRoutes);
