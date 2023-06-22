@@ -42,6 +42,7 @@ app.use(session({
      secret:process.env.COOKIE_SECRET_KEY,
      cookie:{
         // secure:true,
+        httpOnly:false,
         maxAge:3600000
      },
      saveUninitialized:false,
